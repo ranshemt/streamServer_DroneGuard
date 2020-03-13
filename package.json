@@ -1,0 +1,24 @@
+{
+  "name": "streamserver_droneguard",
+  "version": "1.0.0",
+  "description": "stream server to be installed on the rpi zero w, respossible for streaming the video to the client app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ranshemt/streamServer_DroneGuard.git"
+  },
+  "author": "DroneGuard Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ranshemt/streamServer_DroneGuard/issues"
+  },
+  "homepage": "https://github.com/ranshemt/streamServer_DroneGuard#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "node-media-server": "^2.1.5"
+  }
+}
