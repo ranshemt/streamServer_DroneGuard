@@ -8,10 +8,10 @@ const port = 3333
 const config = {
     rtmp: {
       port: 1935,
-      chunk_size: 6000, //60000
+      chunk_size: 60000,
       gop_cache: true,
-      ping: 15, //30
-      ping_timeout: 30 //60
+      ping: 30,
+      ping_timeout: 60
     },
     http: {
       port: 8000,
