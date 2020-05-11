@@ -1,14 +1,11 @@
 //modules
 const express = require('express')
 const NodeMediaServer = require("node-media-server")
-//my modules
-//const node_media_server = require('./media_server')
-//settings
 const port = 3333
 const config = {
     rtmp: {
       port: 1935,
-      chunk_size: 60000,
+      chunk_size: 30000,
       gop_cache: true,
       ping: 30,
       ping_timeout: 60
@@ -16,24 +13,23 @@ const config = {
     http: {
       port: 8000,
       allow_origin: '*'
-    }
+    },
+    // relay: {
+    //   // ffmpeg: '/usr/local/bin/ffmpeg',
+    //   ffmpeg: 'C:/Users/ransh/Downloads/FFmpeg/bin/ffmpeg.exe',
+    //   tasks: [
+    //     {
+    //       app: 'appName',
+    //       mode: 'static',
+    //       edge: 'rtsp://192.168.68.131/live/myVideo',
+    //       name: 'streamName',
+    //       rtsp_transport : 'udp' //['udp', 'tcp', 'udp_multicast', 'http']
+    //     }
+    //   ]
+    // }
   };
 //app & server
 const app = express()
-/**
- * app settings
- */
-//view engine - useful for returning the right HTML files
-// app.set('view engine', 'ejs')
-// //?
-// app.set('views', path.join(__dirname, './views'))
-/**
- * routes
- */
-
-/**
- * run everything
- */
 app.listen(port, () => console.log(`server running on port: ${port}`))
 const nms = new NodeMediaServer(config)
 nms.run();
